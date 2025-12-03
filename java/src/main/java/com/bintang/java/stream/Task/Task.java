@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Task {
 
-    private String namaOrang;
+    private String pekerja;
     private int jamKerja;
-
 
 }

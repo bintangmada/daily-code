@@ -6,34 +6,24 @@ import java.util.stream.Collectors;
 
 public class MyMain {
     public static void main(String[] args) {
+
         List<Task> tasks = List.of(
-                new Task("Bintang", 3),
-                new Task("Mada", 2),
-                new Task("Suharsono", 5),
-                new Task("Bintang", 2),
-                new Task("Mada", 3),
-                new Task("Suharsono", 2)
+                new Task("Budi", 5),
+                new Task("Andi", 4),
+                new Task("Eko", 6),
+                new Task("Eko", 5),
+                new Task("Andi", 2),
+                new Task("Budi", 7)
         );
 
-
-        Map<String, Integer> orangDanJamKerja = tasks
+        Map<String, Integer> orangDanJam = tasks
                 .stream()
                 .collect(Collectors.groupingBy(
-                        Task::getNamaOrang,
-                        Collectors.summingInt(Task::getJamKerja))
-                );
+                        Task::getPekerja,
+                        Collectors.summingInt(Task::getJamKerja)
+                ));
 
-        // V1
-        orangDanJamKerja
-                .entrySet()
-                .stream()
-                .forEach(e -> System.out.println(e.getKey() +" : "+e.getValue()+" jam"));
-
-        System.out.println();
-
-        // V2
-        orangDanJamKerja.forEach((orang, jam) -> System.out.printf("%-10s : %d jam%n", orang, jam));
-
+        orangDanJam.forEach((orang, jam) -> System.out.printf("%-10s : %d jam%n", orang, jam));
 
     }
 }
