@@ -28,5 +28,29 @@ public class UserApp {
 //                result.add(u);
 //            }
 //        }
+
+//        List<String> names = new ArrayList<>();
+//        for(User u : users){
+//            if("ADMIN".equals(u.getRole())){
+//                names.add(u.getName());
+//            }
+//        }
+
+        List<String> names = users
+                .stream()
+                .filter(u -> "ADMIN".equals(u.getRole()))
+                .map(User::getName)
+                .toList();
+        System.out.println("ADMIN : " + names);
+
+        int count = 0;
+        for(User u : users){
+            if("ADMIN".equals(u.getRole())){
+                count ++;
+            }
+        }
+        System.out.println(count);
+
+
     }
 }
