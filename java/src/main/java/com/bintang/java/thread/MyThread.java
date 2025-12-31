@@ -6,6 +6,12 @@ public class MyThread {
 
         t.start();
 
+        try{
+            Thread.sleep(1);
+        }catch(InterruptedException e){
+
+        }
+
         System.out.println("Halo dari main");
 
         System.out.println("Nama Thread : "+Thread.currentThread().getName());
