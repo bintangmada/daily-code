@@ -8,12 +8,12 @@ public class StreamLatihan {
     public static void main(String[] args) {
 
         // LIST ANGKA
-        List<Integer> listAngka = Arrays.asList(1,2,3,4,5,6,7,8,9);
+        List<Integer> listAngka = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
         // 1. FILTER ANGKA GENAP
         List<Integer> genap = listAngka
                 .stream()
-                .filter(a -> a%2 == 0)
+                .filter(a -> a % 2 == 0)
                 .collect(Collectors.toList());
         System.out.println("INI STREAM FILTER : " + genap);
 
@@ -22,12 +22,12 @@ public class StreamLatihan {
                 .stream()
                 .map(a -> a * 10)
                 .collect(Collectors.toList());
-        System.out.println("INI STREAM MAP : "+ kaliSepuluh);
+        System.out.println("INI STREAM MAP : " + kaliSepuluh);
 
         // 3. KOMBINASI FILTER MAP
         List<Integer> hasil = listAngka
                 .stream()
-                .filter( a -> a % 2 != 0)
+                .filter(a -> a % 2 != 0)
                 .map(b -> b * b)
                 .collect(Collectors.toList());
         System.out.println("INI KOMBINASI FILTER MAP : " + hasil);
@@ -42,6 +42,17 @@ public class StreamLatihan {
         // 5. TES PRINT
         listAngka.stream()
                 .forEach(a -> System.out.println(a));
+
+        listAngka.stream()
+                .filter(a -> {
+                    System.out.println("filter : " + a);
+                    return a % 2 == 0;
+                })
+                .map(a -> {
+                    System.out.println("map : " + a);
+                    return a * 10;
+                })
+                .findFirst();
 
     }
 }
