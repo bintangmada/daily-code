@@ -8,7 +8,7 @@ public class StreamLatihan {
     public static void main(String[] args) {
 
         // LIST ANGKA
-        List<Integer> listAngka = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        List<Integer> listAngka = Arrays.asList(1, 2, 3, 4);
 
         // 1. FILTER ANGKA GENAP
         List<Integer> genap = listAngka
@@ -53,6 +53,13 @@ public class StreamLatihan {
                     return a * 10;
                 })
                 .findFirst();
+
+        // REDUCE
+        int total = listAngka
+                .stream()
+                .reduce(0, (a, b) -> a + b);
+
+        System.out.println(total);
 
     }
 }
