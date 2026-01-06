@@ -1,5 +1,7 @@
 package com.bintang.java.mystring;
 
+import java.util.Date;
+
 public class MyString {
     public static void main(String[] args) {
 //        String a = "java";
@@ -17,5 +19,9 @@ public class MyString {
 
         System.out.println(a==b);
         System.out.println(b == "java");
+
+        Date date = new Date();
+
+        System.out.println(date);
     }
 }
